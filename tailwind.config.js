@@ -2,7 +2,11 @@
 export default {
   content: ["./index.html", "./src/**/*.{svelte,js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        banner: "url('./src/assets/banner.jpg')",
+      },
+    },
   },
   plugins: [require("daisyui")],
 };

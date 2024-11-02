@@ -1,3 +1,6 @@
+import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <div className="navbar bg-base-100 md:w-11/12 md:mx-auto">
@@ -19,56 +22,25 @@ const Navbar = () => {
               />
             </svg>
           </div>
-          <ul
+          <div
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-xl w-28 z-[1] mt-3 p-2 shadow"
           >
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
-          </ul>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/Coffees">Coffees</NavLink>
+            <NavLink to="/Dashboard">Dashboard</NavLink>
+          </div>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <Link to="/" className="btn btn-ghost text-xl">
+          Coffee Book
+        </Link>
       </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <a>Item 1</a>
-          </li>
-          <li>
-            <details>
-              <summary>Parent</summary>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </details>
-          </li>
-          <li>
-            <a>Item 3</a>
-          </li>
-        </ul>
-      </div>
-      <div className="navbar-end">
-        <a className="btn">Button</a>
+      <div className="navbar-end hidden lg:flex ">
+        <div className="menu menu-horizontal px-1 gap-6 font-semibold">
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/Coffees">Coffees</NavLink>
+          <NavLink to="/Dashboard">Dashboard</NavLink>
+        </div>
       </div>
     </div>
   );
